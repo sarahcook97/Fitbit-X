@@ -1,0 +1,54 @@
+<!-- howitworks.html-->
+
+{% extends "base.html" %}
+{% block title %}How it works{% endblock %}
+{% block body %}
+<div class="jumbotron">
+  <h1>How it works</h1>
+  <p class="lead">Download your data!</p>
+</div>
+
+
+<title>Nah</title>
+<h1>How to download your data</h1>
+<div class="row">
+
+    <div class="col-sm-6">
+        <ul style="font-size:large">
+            <li> Go to fitbit.com and login to your account</li>
+            <li> Click the Gear icon and select Settings</li>
+            <li> Select Data Export</li>
+            <li> Scroll to bottom of page and perform an export request</li>
+            <li> Confirm via email from fitbit.com</li>
+            <li> Upload your ZIP or CSV file below!</li>
+        </ul>
+
+    </div>
+    <div class="col-sm-6">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Ifq10pFDKRw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+</div>
+<h1>Select file to upload</h1>
+<p>
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+		<ul class=flashes>
+		{% for message in messages %}
+		  <li>{{ message }}</li>
+		{% endfor %}
+		</ul>
+	  {% endif %}
+	{% endwith %}
+</p>
+<form method="post" action="/howitworks" enctype="multipart/form-data">
+    <dl>
+		<p>
+			<input type="file" name="file" multiple="true" autocomplete="off" required>
+		</p>
+    </dl>
+    <p>
+		<input type="submit" value="Submit">
+	</p>
+</form>
+{% endblock %}

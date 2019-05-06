@@ -1,0 +1,37 @@
+[{
+  "dateTime" : "05/31/17 17:02:39",
+  "value" : {
+    "exerciseId" : 7994735916,
+    "runVO2Max" : 36.914950000000005,
+    "runVO2MaxError" : 1.2479600000000002,
+    "filteredRunVO2Max" : 36.914950000000005,
+    "filteredRunVO2MaxError" : 1.2479600000000002
+  }
+},{
+  "dateTime" : "06/01/17 16:09:10",
+  "value" : {
+    "exerciseId" : 8011597564,
+    "runVO2Max" : 44.166180000000004,
+    "runVO2MaxError" : 1.8289000000000002,
+    "filteredRunVO2Max" : 39.92493,
+    "filteredRunVO2MaxError" : 0.75917
+  }
+},{
+  "dateTime" : "06/03/17 15:17:25",
+  "value" : {
+    "exerciseId" : 8050497515,
+    "runVO2Max" : 41.22173,
+    "runVO2MaxError" : 4.95608,
+    "filteredRunVO2Max" : 40.11652,
+    "filteredRunVO2MaxError" : 0.73223
+  }
+},{
+  "dateTime" : "06/04/17 14:02:24",
+  "value" : {
+    "exerciseId" : 8067986438,
+    "runVO2Max" : 45.485580000000006,
+    "runVO2MaxError" : 1.27113,
+    "filteredRunVO2Max" : 42.161860000000004,
+    "filteredRunVO2MaxError" : 0.48423000000000005
+  }
+}]

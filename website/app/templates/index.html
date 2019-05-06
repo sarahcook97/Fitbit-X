@@ -1,0 +1,50 @@
+<!-- index.html-->
+
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block body %}
+<div class="jumbotron">
+  <h1>Fitbit-X</h1>
+  <p class="lead">The future of health data analysis</p>
+</div>
+
+<title>This is the Title</title>
+<h1>Who are we?</h1>
+<p>Welcome to Fitbit-X, a website where you can upload your Fitbit data to receive in-depth correlations, trends, and insights; all personalized and tailored directly to you! </p>
+
+<p>Our team understands the power of data, and we want to give that power to you.</p>
+
+<!--p>This team consists of five Berkeley students who are passionate about Data Science and improving health through simple daily exercises</p-->
+
+<h1>Meet the Fitbit-X Team!</h1>
+<p>The Fitbit-X team consists of five UC Berkeley students who are passionate about Data Science and improving health through simple daily exercises</p>
+<div class="row">
+
+    <div class="col-sm-2">
+      <img src="{{url_for('static', filename='adele.png')}}" alt="Paragraph Image" style="width:100px;height:145px;">  
+        <p>Adele is a junior studying Data Science and Business. She is a long-time Fitbit enthusiast and checks her app every hour.</p>
+
+    </div>
+    <div class="col-sm-2">
+      <img src="{{url_for('static', filename='sarah.png')}}" alt="Paragraph Image" style="width:100px;height:145px;"> 
+        <p>Sarah is a senior studying Civil Engineering and loves her Fitbit Alta!</p>
+
+    </div>
+    <div class="col-sm-2">
+      <img src="{{url_for('static', filename='kelley.png')}}" alt="Paragraph Image" style="width:100px;height:145px;">
+        <p>Kelley is a junior studying Data Science with a Computer Science minor and has taken a shower with an elephant!</p>
+
+    </div>
+    <div class="col-sm-2">
+      <img src="{{url_for('static', filename='wilson.png')}}" alt="Paragraph Image" style="width:100px;height:145px;"> 
+        <p>Wilson is a junior studying Data Science and prefers to go to the gym only for the snapchat credit!</p>
+
+    </div>
+    <div class="col-sm-2">
+      <img src="{{url_for('static', filename='daniel.png')}}" alt="Paragraph Image" style="width:100px;height:145px;">  
+        <p>Daniel is a senior studying ORMS who is a big Sacramento Kings Fan!</p>
+
+    </div>
+</div>
+
+{% endblock %}

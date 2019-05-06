@@ -1,0 +1,80 @@
+<!-- about.html-->
+
+{% extends "base.html" %}
+{% block title %}About{% endblock %}
+{% block body %}
+<div class="jumbotron">
+  <h1>About Fitbit-X</h1>
+  <p class="lead">We take your Fitbit data and find out mORE</p>
+</div>
+
+
+<div class="row">
+
+    <div class="col-sm-6">
+        <p style="font-size:xx-large; padding-top:10px">What you can gain from our program:
+        </p>
+        <ul style="font-size:xx-large">
+            <li> Deeper understanding of your personal health patterns</li>
+            <li> Personalized daily goals</li>
+            <li> Health Reminder Alerts</li>
+        </ul>
+
+    </div>
+    <div class="col-sm-6">
+        <img src="{{url_for('static', filename='largelineup.png')}}" alt="Paragraph Image" style="width:600px;height:400px;">
+    </div>
+    <!-- /.col-sm-6 -->
+    <!-- /.col-sm-6 -->
+</div>
+		<!-- /.row -->
+		<div class="row">
+			<div class="col-sm-6">
+				<p style="font-size:xx-large; padding-top:20px">How does it work?
+				</p>
+				<ul style="font-size:xx-large">
+					<li> Compatible with any type of Fitbit</li>
+                    <li> Convert uploaded JSON or CSV files</li>
+					<li> Perform Exploratory Data Analysis</li>
+					<li> Display informative graphs and charts tailored to YOU!</li>
+				</ul>
+			</div>
+			<!-- /.col-sm-6 -->
+			<div class="col-sm-6">
+				<img src="{{url_for('static', filename='runner.png')}}" alt="Paragraph Image" style="width:600px;height:400px;">
+			</div>
+			<!-- /.col-sm-6 -->
+		</div>
+		<!-- /.row -->
+		<div class = "row" style="width: auto; height: 25px"> 
+			<p></p>
+		</div>
+		<!-- row -->
+		<div class="row" style="padding-top: 30px">
+			<div class="col-sm-4">
+				<img src="{{url_for('static', filename='checkbox.png')}}" alt="Icon" style="width:300px;height:300px;align-items:center;">
+				<h2 style="font-size: x-large;"> Simple Process</h2>
+			</div>
+			<!-- col-sm-4 -->
+			<div class="col-sm-4">
+				<img src="{{url_for('static', filename='group.png')}}" alt="Icon" style="width:400px;height:300px;align-content: center;">
+				<h2 style="font-size: x-large;"> Trustworthy Team</h2>
+			</div>
+			<!-- col-sm-4 -->
+			<div class="col-sm-4">
+				<img src="{{url_for('static', filename='piechart.png')}}" alt="Icon" style="width:300px;height:300px;align-content: center;">
+				<h2 style="font-size: x-large;"> Data Science Solutions</h2>
+			</div>
+			<!-- col-sm-4 -->
+		</div>
+		<!-- row -->
+
+		<div class="row" style="background-color:transparent; width:auto; height:90px"></div>
+		<!-- row -->
+
+	</div>
+	<!-- /#page-wrapper -->
+</div>
+<!-- /#page-map -->
+
+{% endblock %}

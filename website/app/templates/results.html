@@ -1,0 +1,146 @@
+<!-- index.html-->
+
+{% extends "base.html" %}
+{% block title %}Results{% endblock %}
+{% block body %}
+<div class="jumbotron">
+  <h1>Your results</h1>
+  <p class="lead">These are personalized to YOU!</p>
+</div>
+
+
+
+
+
+<p>This will be a lot of information. We suggest that you come up with goals for yourself before looking at these results. Then, once the data has been fully processed, take your time looking through the information! Congratulations on taking the first steps in becoming healthier!</p>
+
+<h1>Your Sleep Insights</h1>
+<div class="row">
+
+    <div class="col-sm-4">
+        <img src="{{url_for('static', filename='sleepinfo.png')}}" alt="Paragraph Image" style="width:425px;height:300px;">        
+       
+    </div>
+    <div class="col-sm-4">
+        <p>What is this showing you?</p>
+        <ul>
+            <li> Left graph: Histogram of how many minutes of sleep during each phase. Line graphs overlaid to show normalization.</li>
+            <li> Right graph: Scatter plot of minutes in bed (x-axis) vs. minutes in each stage of sleep on the y-axis and labeled with different colors.</li>
+            <li> Sleep is vital for rejuvenation and stabilization of your body. Everybody is different for how much sleep they need, but these are the averages:</li>
+            <li> Awake 5-10%, REM 20-25%, Light 50-60%, Deep 20-25%</li>
+        </ul>
+    </div>
+    <div class="col-sm-4">
+        <img src="{{url_for('static', filename='sleepscatter.png')}}" alt="Paragraph Image" style="width:450px;height:300px;">
+    </div>
+
+</div>
+
+
+<h1>Your Activity and Exercise Insights</h1>
+<div class="row">
+
+    <div class="col-sm-4">
+        <img src="{{url_for('static', filename='minactivedow.png')}}" alt="Paragraph Image" style="width:400px;height:400px;">
+
+    </div>
+    <div class="col-sm-4">
+        <p>What is this showing you?</p>
+        <ul>
+            <li> Left graph: Bar graph depicting heavy exercise on weekends versus weekdays.</li>
+            <li> Right graph: Bar graph depicting calories burned through exercise per month.</li>
+            <li> You tend to burn more calories on Weekdays! Good job on getting to the gym or ourside during the work week.</li>
+            <li> Try to focus more on consistency! If you live a healthy lifestyle, then the calories burned per month will be more equal.</li>
+        </ul>
+    </div>
+    <div class="col-sm-4">
+        <meta charset="utf-8">   
+<title>Chart.js </title>      <!-- import plugin script -->   
+<script src="{{url_for('static', filename='Chart.min.js')}}"></script>
+<h3>Calories Burned per Month</h3>
+<!-- bar chart canvas element -->
+<canvas id="chart" width="425" height="300"></canvas>
+
+<script> 
+    // bar chart data<br />
+   var barData = {
+            labels : ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+            datasets : [{
+            // labels: '{{ legend }}',
+            fillColor: "rgba(151,187,205,1)",
+            strokeColor: "rgba(151,187,205,1)",
+            pointColor: "rgba(151,187,205,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(151,187,205,1)",
+            bezierCurve : false,
+            data : [{%for item in values  %}
+                        {{item}},
+                        {% endfor %}]
+          }]
+        } ;
+     Chart.defaults.global.animationSteps = 50;
+     Chart.defaults.global.tooltipYPadding = 16;
+     Chart.defaults.global.tooltipCornerRadius = 0;
+     Chart.defaults.global.tooltipTitleFontStyle = "normal";
+     Chart.defaults.global.tooltipFillColor = "rgba(0,0,0,0.8)";
+     Chart.defaults.global.animationEasing = "easeOutBounce";
+     Chart.defaults.global.responsive = false;
+     Chart.defaults.global.scaleLineColor = "black";
+     Chart.defaults.global.scaleFontSize = 16;
+  // get bar chart canvas<br />
+   var mychart = document.getElementById("chart").getContext("2d");
+    steps = 10
+    max = 10
+   // draw bar chart<br />
+   var LineChartDemo = new Chart(mychart, {
+       type: 'bar',
+       data: barData
+    });
+ </script>
+    </div>
+
+</div>
+
+<h1>Your Calorie Insights</h1>
+<div class="row">
+
+    <div class="col-sm-4">
+      <img src="{{url_for('static', filename='calday.png')}}" alt="Paragraph Image" style="width:425px;height:300px;">  
+
+    </div>
+    <div class="col-sm-4">
+        <p>What is this showing you?</p>
+        <ul>
+            <li> Left graph: Violin plot showing calories burned on each day. The vertical lines center of each violin is a box plot which depicts the quartiles of the data. The stretched areas around the box plots represent quantity of information around that data point.</li>
+            <li> Right graph: Bar graph showing how many calories are burned on weekdays versus weekends.</li>
+        </ul>
+    </div>
+    <div class="col-sm-4">
+        <img src="{{url_for('static', filename='caldow.png')}}" alt="Paragraph Image" style="width:425px;height:300px;">
+    </div>
+
+</div>
+
+<h1>Your Heartrate Insights</h1>
+<div class="row">
+
+    <div class="col-sm-4">
+        <img src="{{url_for('static', filename='heartratedow.png')}}" alt="Paragraph Image" style="width:425px;height:300px;">
+
+    </div>
+    <div class="col-sm-4">
+        <p>What is this showing you?</p>
+        <ul>
+            <li> Left graph: Violin plot of average heartrate versus day of the week.</li>
+            <li> Right graph: Frequency histogram of heartrates divided over different types of activity.</li>
+            <li> Bottom graph: Resting heart rate over the data range. Typically, a lower resting heartrate indicates a healthier you!</li>
+        </ul>
+    </div>
+    <div class="col-sm-4">
+        <img src="{{url_for('static', filename='exercise.png')}}" alt="Paragraph Image" style="width:450px;height:300px;">
+    </div>
+
+</div>
+<div class="row"><img src="{{url_for('static', filename='resting.png')}}" alt="Paragraph Image" style="width:1000px;height:350px;"></div>
+{% endblock %}
